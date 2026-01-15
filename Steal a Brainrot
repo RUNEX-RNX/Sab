@@ -1,0 +1,55 @@
+local Rayfield = loadstring(game:HttpGet('https://pastebin.com/raw/8BcnhJRN'))()
+
+
+local Window = Rayfield:CreateWindow({
+   Name = "Steal a brainrot",
+   Icon = 1,
+   LoadingTitle = "Steal a brainrot",
+   LoadingSubtitle = "by RUNEX",
+   ShowText = "RNXhub",
+   Theme = "Amethyst", 
+
+   ToggleUIKeybind = "Q",
+
+   DisableRayfieldPrompts = false,
+   DisableBuildWarnings = false, 
+
+   ConfigurationSaving = {
+      Enabled = true,
+      FolderName = nil, 
+      FileName = "RUNEX project"
+   },
+
+   Discord = {
+      Enabled = true, 
+      Invite = "t.me/RUNEX_X_SCRIPT", 
+      RememberJoins = true
+   },
+
+   KeySystem = true,
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "Join Telegram channel RUNEX_X_SCRIPT", -- Use this to tell the user how to get a key
+      FileName = "Key",
+      SaveKey = true, 
+      GrabKeyFromSite = false,
+      Key = {"RUNEX","Key_RUNEXscript","RUNEX X SCRIPT","Key_293818501058299"}
+   }
+})
+
+local Tab = Window:CreateTab("Useful", "tablet-smartphone")
+
+local Button = Tab:CreateButton({
+   Name = "Remowe Event Attacks",
+   Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/GithubMagical/Roblox-Egor/refs/heads/main/lua%20v2", true))()
+   end,
+})
+
+local Button = Tab:CreateButton({
+   Name = "Roblox Egor script 2",
+   Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/Rfvfbi26"))();
+   end,
+})
