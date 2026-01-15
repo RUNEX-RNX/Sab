@@ -1,3 +1,9 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "RemoweEventHit\nRNX hub";
+    Text = "\nВас не бьют ивенты";
+    Duration = 10;
+})
+
 gloveHits = {
     ["Default"] = game.ReplicatedStorage.b,
     ["Extended"] = game.ReplicatedStorage.b,
