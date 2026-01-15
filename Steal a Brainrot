@@ -43,13 +43,14 @@ local Tab = Window:CreateTab("Useful", "tablet-smartphone")
 local Button = Tab:CreateButton({
    Name = "Remowe Event Attacks",
    Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/GithubMagical/Roblox-Egor/refs/heads/main/lua%20v2", true))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/RUNEX-RNX/Sab/refs/heads/main/RenoweEventHit", true))()
    end,
 })
-
+--[[
 local Button = Tab:CreateButton({
-   Name = "Roblox Egor script 2",
+   Name = "-",
    Callback = function()
-loadstring(game:HttpGet("https://pastebin.com/raw/Rfvfbi26"))();
+loadstring(game:HttpGet("-"))();
    end,
 })
+]]
