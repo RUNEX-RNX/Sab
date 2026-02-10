@@ -1,0 +1,1799 @@
+if not game:IsLoaded() then
+    game.Loaded:Wait()
+end
+
+local v248, v249 = pcall(function()
+    local _CoreGui = game:GetService('CoreGui')
+
+    print('Script started. Attempting to create GUI...')
+
+    local _ScreenGui = Instance.new('ScreenGui')
+
+    _ScreenGui.Name = 'L1GHTHubGUI'
+    _ScreenGui.Parent = _CoreGui
+    _ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    _ScreenGui.ResetOnSpawn = false
+    _ScreenGui.Enabled = true
+
+    print('ScreenGui created and parented to CoreGui')
+
+    local _Frame = Instance.new('Frame')
+
+    _Frame.Size = UDim2.new(0, 280, 0, 200)
+    _Frame.Position = UDim2.new(0.4, 0, 0.3, 0)
+    _Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+    _Frame.BorderSizePixel = 0
+    _Frame.Active = true
+    _Frame.Draggable = true
+    _Frame.Parent = _ScreenGui
+
+    Instance.new('UICorner', _Frame)
+    print('Main Frame created')
+
+    local _Frame2 = Instance.new('Frame')
+
+    _Frame2.Size = UDim2.new(1, 0, 0, 40)
+    _Frame2.Position = UDim2.new(0, 0, 0, 0)
+    _Frame2.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+    _Frame2.BorderSizePixel = 0
+    _Frame2.Parent = _Frame
+
+    Instance.new('UICorner', _Frame2)
+
+    local _TextLabel = Instance.new('TextLabel')
+
+    _TextLabel.Size = UDim2.new(1, -40, 1, 0)
+    _TextLabel.Position = UDim2.new(0, 10, 0, 0)
+    _TextLabel.BackgroundTransparency = 1
+    _TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextLabel.Text = 'L1GHT HUB V2'
+    _TextLabel.Font = Enum.Font.GothamBold
+    _TextLabel.TextSize = 14
+    _TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+    _TextLabel.Parent = _Frame2
+
+    local _TextLabel2 = Instance.new('TextLabel')
+
+    _TextLabel2.Size = UDim2.new(1, -40, 1, 0)
+    _TextLabel2.Position = UDim2.new(0, 11, 0, 1)
+    _TextLabel2.BackgroundTransparency = 1
+    _TextLabel2.TextColor3 = Color3.fromRGB(0, 0, 0)
+    _TextLabel2.TextTransparency = 0.7
+    _TextLabel2.Text = 'L1GHT HUB V2'
+    _TextLabel2.Font = Enum.Font.GothamBold
+    _TextLabel2.TextSize = 14
+    _TextLabel2.TextXAlignment = Enum.TextXAlignment.Left
+    _TextLabel2.ZIndex = _TextLabel.ZIndex - 1
+    _TextLabel2.Parent = _Frame2
+
+    local _UIStroke = Instance.new('UIStroke')
+
+    _UIStroke.Color = Color3.fromRGB(0, 0, 0)
+    _UIStroke.Thickness = 1
+    _UIStroke.Transparency = 0.5
+    _UIStroke.Parent = _TextLabel
+
+    local _TextButton = Instance.new('TextButton')
+
+    _TextButton.Size = UDim2.new(0, 32, 0, 32)
+    _TextButton.Position = UDim2.new(1, -36, 0, 4)
+    _TextButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton.Text = 'X'
+    _TextButton.Font = Enum.Font.GothamBold
+    _TextButton.TextSize = 14
+    _TextButton.Parent = _Frame2
+
+    Instance.new('UICorner', _TextButton)
+
+    local _TextButton2 = Instance.new('TextButton')
+
+    _TextButton2.Size = UDim2.new(0, 32, 0, 32)
+    _TextButton2.Position = UDim2.new(1, -74, 0, 4)
+    _TextButton2.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton2.Text = '\u{25a1}'
+    _TextButton2.Font = Enum.Font.GothamBold
+    _TextButton2.TextSize = 14
+    _TextButton2.Parent = _Frame2
+
+    Instance.new('UICorner', _TextButton2)
+
+    local _Frame3 = Instance.new('Frame')
+
+    _Frame3.Size = UDim2.new(1, 0, 0, 1)
+    _Frame3.Position = UDim2.new(0, 0, 0, 40)
+    _Frame3.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    _Frame3.BorderSizePixel = 0
+    _Frame3.ZIndex = 2
+    _Frame3.Parent = _Frame
+
+    local _Frame4 = Instance.new('Frame')
+
+    _Frame4.Size = UDim2.new(0, 70, 1, -40)
+    _Frame4.Position = UDim2.new(0, 0, 0, 40)
+    _Frame4.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+    _Frame4.ZIndex = 1
+    _Frame4.Parent = _Frame
+
+    Instance.new('UICorner', _Frame4)
+
+    local _TextButton3 = Instance.new('TextButton')
+
+    _TextButton3.Size = UDim2.new(0.8, 0, 0, 20)
+    _TextButton3.Position = UDim2.new(0.1, 0, 0.08, 0)
+    _TextButton3.BackgroundColor3 = Color3.fromRGB(60, 60, 60)
+    _TextButton3.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton3.Text = 'Main'
+    _TextButton3.Font = Enum.Font.Gotham
+    _TextButton3.TextSize = 10
+    _TextButton3.ZIndex = 2
+    _TextButton3.Parent = _Frame4
+
+    Instance.new('UICorner', _TextButton3)
+
+    local _TextButton4 = Instance.new('TextButton')
+
+    _TextButton4.Size = UDim2.new(0.8, 0, 0, 20)
+    _TextButton4.Position = UDim2.new(0.1, 0, 0.08, 25)
+    _TextButton4.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton4.TextColor3 = Color3.fromRGB(180, 180, 180)
+    _TextButton4.Text = 'Helper'
+    _TextButton4.Font = Enum.Font.Gotham
+    _TextButton4.TextSize = 10
+    _TextButton4.ZIndex = 2
+    _TextButton4.Parent = _Frame4
+
+    Instance.new('UICorner', _TextButton4)
+
+    local _TextButton5 = Instance.new('TextButton')
+
+    _TextButton5.Size = UDim2.new(0.8, 0, 0, 20)
+    _TextButton5.Position = UDim2.new(0.1, 0, 0.08, 50)
+    _TextButton5.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton5.TextColor3 = Color3.fromRGB(180, 180, 180)
+    _TextButton5.Text = 'ESP'
+    _TextButton5.Font = Enum.Font.Gotham
+    _TextButton5.TextSize = 10
+    _TextButton5.ZIndex = 2
+    _TextButton5.Parent = _Frame4
+
+    Instance.new('UICorner', _TextButton5)
+
+    local _TextButton6 = Instance.new('TextButton')
+
+    _TextButton6.Size = UDim2.new(0.8, 0, 0, 20)
+    _TextButton6.Position = UDim2.new(0.1, 0, 0.08, 75)
+    _TextButton6.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton6.TextColor3 = Color3.fromRGB(180, 180, 180)
+    _TextButton6.Text = 'GUIS'
+    _TextButton6.Font = Enum.Font.Gotham
+    _TextButton6.TextSize = 10
+    _TextButton6.ZIndex = 2
+    _TextButton6.Parent = _Frame4
+
+    Instance.new('UICorner', _TextButton6)
+
+    local _TextButton7 = Instance.new('TextButton')
+
+    _TextButton7.Size = UDim2.new(0.8, 0, 0, 20)
+    _TextButton7.Position = UDim2.new(0.1, 0, 0.08, 100)
+    _TextButton7.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton7.TextColor3 = Color3.fromRGB(180, 180, 180)
+    _TextButton7.Text = 'OTHER'
+    _TextButton7.Font = Enum.Font.Gotham
+    _TextButton7.TextSize = 10
+    _TextButton7.ZIndex = 2
+    _TextButton7.Parent = _Frame4
+
+    Instance.new('UICorner', _TextButton7)
+
+    local _Frame5 = Instance.new('Frame')
+
+    _Frame5.Size = UDim2.new(1, -75, 1, -45)
+    _Frame5.Position = UDim2.new(0, 75, 0, 40)
+    _Frame5.BackgroundTransparency = 1
+    _Frame5.Parent = _Frame
+
+    local _Frame6 = Instance.new('Frame')
+
+    _Frame6.Size = UDim2.new(1, 0, 1, 0)
+    _Frame6.BackgroundTransparency = 1
+    _Frame6.Visible = true
+    _Frame6.Parent = _Frame5
+
+    local _Frame7 = Instance.new('Frame')
+
+    _Frame7.Size = UDim2.new(1, 0, 1, 0)
+    _Frame7.BackgroundTransparency = 1
+    _Frame7.Visible = false
+    _Frame7.Parent = _Frame5
+
+    local _Frame8 = Instance.new('Frame')
+
+    _Frame8.Size = UDim2.new(1, 0, 1, 0)
+    _Frame8.BackgroundTransparency = 1
+    _Frame8.Visible = false
+    _Frame8.Parent = _Frame5
+
+    local _Frame9 = Instance.new('Frame')
+
+    _Frame9.Size = UDim2.new(1, 0, 1, 0)
+    _Frame9.BackgroundTransparency = 1
+    _Frame9.Visible = false
+    _Frame9.Parent = _Frame5
+
+    local _Frame10 = Instance.new('Frame')
+
+    _Frame10.Size = UDim2.new(1, 0, 1, 0)
+    _Frame10.BackgroundTransparency = 1
+    _Frame10.Visible = false
+    _Frame10.Parent = _Frame5
+
+    local _TextButton8 = Instance.new('TextButton')
+
+    _TextButton8.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton8.Position = UDim2.new(0.5, -80, 0.08, 0)
+    _TextButton8.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton8.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton8.Text = 'HIDE BRAINROT'
+    _TextButton8.Font = Enum.Font.GothamBold
+    _TextButton8.TextSize = 12
+    _TextButton8.Parent = _Frame6
+
+    Instance.new('UICorner', _TextButton8)
+
+    local _TextButton9 = Instance.new('TextButton')
+
+    _TextButton9.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton9.Position = UDim2.new(0.5, -80, 0.08, 36)
+    _TextButton9.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton9.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton9.Text = 'L1GHT DESYNC'
+    _TextButton9.Font = Enum.Font.GothamBold
+    _TextButton9.TextSize = 12
+    _TextButton9.Parent = _Frame6
+
+    Instance.new('UICorner', _TextButton9)
+
+    local _TextButton10 = Instance.new('TextButton')
+
+    _TextButton10.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton10.Position = UDim2.new(0.5, -80, 0.08, 72)
+    _TextButton10.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton10.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton10.Text = 'FLOAT UP'
+    _TextButton10.Font = Enum.Font.GothamBold
+    _TextButton10.TextSize = 12
+    _TextButton10.Parent = _Frame6
+
+    Instance.new('UICorner', _TextButton10)
+
+    local _TextButton11 = Instance.new('TextButton')
+
+    _TextButton11.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton11.Position = UDim2.new(0.5, -80, 0.08, 108)
+    _TextButton11.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton11.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton11.Text = 'FLOAT FALL'
+    _TextButton11.Font = Enum.Font.GothamBold
+    _TextButton11.TextSize = 12
+    _TextButton11.Parent = _Frame6
+
+    Instance.new('UICorner', _TextButton11)
+
+    local _TextButton12 = Instance.new('TextButton')
+
+    _TextButton12.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton12.Position = UDim2.new(0.5, -80, 0.08, 0)
+    _TextButton12.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton12.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton12.Text = 'AFK HIDE BRAINROT'
+    _TextButton12.Font = Enum.Font.GothamBold
+    _TextButton12.TextSize = 12
+    _TextButton12.Parent = _Frame7
+
+    Instance.new('UICorner', _TextButton12)
+
+    local _TextButton13 = Instance.new('TextButton')
+
+    _TextButton13.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton13.Position = UDim2.new(0.5, -80, 0.08, 36)
+    _TextButton13.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton13.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton13.Text = 'ANTI-DIE'
+    _TextButton13.Font = Enum.Font.GothamBold
+    _TextButton13.TextSize = 12
+    _TextButton13.Parent = _Frame7
+
+    Instance.new('UICorner', _TextButton13)
+
+    local _TextButton14 = Instance.new('TextButton')
+
+    _TextButton14.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton14.Position = UDim2.new(0.5, -80, 0.08, 72)
+    _TextButton14.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton14.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton14.Text = 'PET FINDER'
+    _TextButton14.Font = Enum.Font.GothamBold
+    _TextButton14.TextSize = 12
+    _TextButton14.Parent = _Frame7
+
+    Instance.new('UICorner', _TextButton14)
+
+    local _TextButton15 = Instance.new('TextButton')
+
+    _TextButton15.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton15.Position = UDim2.new(0.5, -80, 0.08, 0)
+    _TextButton15.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton15.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton15.Text = 'ESP PLAYER'
+    _TextButton15.Font = Enum.Font.GothamBold
+    _TextButton15.TextSize = 12
+    _TextButton15.Parent = _Frame8
+
+    Instance.new('UICorner', _TextButton15)
+
+    local _TextLabel3 = Instance.new('TextLabel')
+
+    _TextLabel3.Size = UDim2.new(1, 0, 0, 40)
+    _TextLabel3.Position = UDim2.new(0, 0, 0.3, 0)
+    _TextLabel3.BackgroundTransparency = 1
+    _TextLabel3.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextLabel3.Text = 'UPDATING SOON'
+    _TextLabel3.Font = Enum.Font.GothamBold
+    _TextLabel3.TextSize = 18
+    _TextLabel3.Parent = _Frame9
+
+    local _TextLabel4 = Instance.new('TextLabel')
+
+    _TextLabel4.Size = UDim2.new(1, 0, 0, 20)
+    _TextLabel4.Position = UDim2.new(0, 0, 0.3, 45)
+    _TextLabel4.BackgroundTransparency = 1
+    _TextLabel4.TextColor3 = Color3.fromRGB(180, 180, 180)
+    _TextLabel4.Text = 'JOIN DISCORD'
+    _TextLabel4.Font = Enum.Font.Gotham
+    _TextLabel4.TextSize = 12
+    _TextLabel4.Parent = _Frame9
+
+    local _TextButton16 = Instance.new('TextButton')
+
+    _TextButton16.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton16.Position = UDim2.new(0.5, -80, 0.08, 0)
+    _TextButton16.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton16.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton16.Text = 'DISCORD SERVER'
+    _TextButton16.Font = Enum.Font.GothamBold
+    _TextButton16.TextSize = 12
+    _TextButton16.Parent = _Frame10
+
+    Instance.new('UICorner', _TextButton16)
+
+    local _TextButton17 = Instance.new('TextButton')
+
+    _TextButton17.Size = UDim2.new(0, 160, 0, 32)
+    _TextButton17.Position = UDim2.new(0.5, -80, 0.08, 36)
+    _TextButton17.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+    _TextButton17.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextButton17.Text = 'TIKTOK ACCOUNT'
+    _TextButton17.Font = Enum.Font.GothamBold
+    _TextButton17.TextSize = 12
+    _TextButton17.Parent = _Frame10
+
+    Instance.new('UICorner', _TextButton17)
+
+    local _TextLabel5 = Instance.new('TextLabel')
+
+    _TextLabel5.Size = UDim2.new(0, 160, 0, 32)
+    _TextLabel5.Position = UDim2.new(0.5, -80, 0.08, 72)
+    _TextLabel5.BackgroundTransparency = 1
+    _TextLabel5.TextColor3 = Color3.fromRGB(255, 255, 255)
+    _TextLabel5.Text = 'CREDITS TO ZENIKAZE HUB FOR THE HELP!'
+    _TextLabel5.Font = Enum.Font.GothamBold
+    _TextLabel5.TextSize = 12
+    _TextLabel5.TextWrapped = true
+    _TextLabel5.Parent = _Frame10
+
+    print('GUI elements created successfully')
+
+    local function v41(p36)
+        local _Size = p36.Size
+
+        p36.MouseEnter:Connect(function()
+            if not p36.Text:find('%(ON%)') then
+                game:GetService('TweenService'):Create(p36, TweenInfo.new(0.1), {
+                    BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                    Size = UDim2.new(0, 155, 0, 30),
+                }):Play()
+            end
+        end)
+        p36.MouseLeave:Connect(function()
+            local v38 = p36.Text:find('%(ON%)') and Color3.fromRGB(80, 20, 20) or Color3.fromRGB(40, 40, 40)
+            local v39 = {
+                BackgroundColor3 = v38,
+                Size = _Size,
+            }
+
+            game:GetService('TweenService'):Create(p36, TweenInfo.new(0.1), v39):Play()
+
+        end)
+        p36.MouseButton1Down:Connect(function()
+            game:GetService('TweenService'):Create(p36, TweenInfo.new(0.1), {
+                Size = UDim2.new(0, 150, 0, 28),
+            }):Play()
+        end)
+        p36.MouseButton1Up:Connect(function()
+            local v40 = {Size = _Size}
+
+            game:GetService('TweenService'):Create(p36, TweenInfo.new(0.1), v40):Play()
+        end)
+    end
+    local function v44(p42)
+        local _Size2 = p42.Size
+
+        p42.MouseEnter:Connect(function()
+            game:GetService('TweenService'):Create(p42, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+                TextColor3 = Color3.fromRGB(0, 0, 0),
+                Size = UDim2.new(0, 34, 0, 34),
+            }):Play()
+        end)
+        p42.MouseLeave:Connect(function()
+            game:GetService('TweenService'):Create(p42, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                BackgroundColor3 = Color3.fromRGB(40, 40, 40),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+                Size = _Size2,
+            }):Play()
+        end)
+    end
+
+    v41(_TextButton8)
+    v41(_TextButton9)
+    v41(_TextButton10)
+    v41(_TextButton11)
+    v41(_TextButton12)
+    v41(_TextButton13)
+    v41(_TextButton14)
+    v41(_TextButton15)
+    v41(_TextButton16)
+    v41(_TextButton17)
+    v44(_TextButton)
+    v44(_TextButton2)
+
+    local function u51(p45)
+        _Frame6.Visible = p45 == 'Main'
+        _Frame7.Visible = p45 == 'Helper'
+        _Frame8.Visible = p45 == 'ESP'
+        _Frame9.Visible = p45 == 'GUIS'
+        _Frame10.Visible = p45 == 'OTHER'
+
+        local v46 = {
+            _TextButton3,
+            _TextButton4,
+            _TextButton5,
+            _TextButton6,
+            _TextButton7,
+        }
+        local v47, v48, v49 = pairs(v46)
+
+        while true do
+            local v50
+
+            v49, v50 = v47(v48, v49)
+
+            if v49 == nil then
+                break
+            end
+
+            game:GetService('TweenService'):Create(v50, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(40, 40, 40),
+                TextColor3 = Color3.fromRGB(180, 180, 180),
+            }):Play()
+        end
+
+        if p45 == 'Main' then
+            game:GetService('TweenService'):Create(_TextButton3, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+            }):Play()
+        elseif p45 == 'Helper' then
+            game:GetService('TweenService'):Create(_TextButton4, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+            }):Play()
+        elseif p45 == 'ESP' then
+            game:GetService('TweenService'):Create(_TextButton5, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+            }):Play()
+        elseif p45 == 'GUIS' then
+            game:GetService('TweenService'):Create(_TextButton6, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+            }):Play()
+        else
+            game:GetService('TweenService'):Create(_TextButton7, TweenInfo.new(0.2), {
+                BackgroundColor3 = Color3.fromRGB(60, 60, 60),
+                TextColor3 = Color3.fromRGB(255, 255, 255),
+            }):Play()
+        end
+    end
+
+    _TextButton3.MouseButton1Click:Connect(function()
+        u51('Main')
+    end)
+    _TextButton4.MouseButton1Click:Connect(function()
+        u51('Helper')
+    end)
+    _TextButton5.MouseButton1Click:Connect(function()
+        u51('ESP')
+    end)
+    _TextButton6.MouseButton1Click:Connect(function()
+        u51('GUIS')
+    end)
+    _TextButton7.MouseButton1Click:Connect(function()
+        u51('OTHER')
+    end)
+
+    local _LocalPlayer = game.Players.LocalPlayer
+    local u53 = false
+    local u54 = false
+    local u55 = false
+    local u56 = false
+    local u57 = false
+    local u58 = false
+    local u59 = nil
+    local u60 = nil
+    local u61 = nil
+    local u62 = nil
+    local u63 = nil
+    local u64 = nil
+    local u65 = false
+    local u66 = {}
+    local u67 = {}
+    local u68 = false
+    local u69 = nil
+
+    local function v97()
+        local v95, v96 = pcall(function()
+            u58 = not u58
+
+            if u58 then
+                _TextButton15.Text = 'ESP PLAYER (ON)'
+                _TextButton15.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+
+                local v70, v71, v72 = pairs(game.Players:GetPlayers())
+
+                while true do
+                    local v73
+
+                    v72, v73 = v70(v71, v72)
+
+                    if v72 == nil then
+                        break
+                    end
+                    if v73 ~= _LocalPlayer and v73.Character then
+                        local _Highlight = Instance.new('Highlight')
+
+                        _Highlight.Adornee = v73.Character
+                        _Highlight.FillColor = Color3.fromRGB(0, 0, 0)
+                        _Highlight.FillTransparency = 0.3
+                        _Highlight.OutlineTransparency = 0
+                        _Highlight.OutlineColor = Color3.fromRGB(128, 128, 128)
+                        _Highlight.Parent = v73.Character
+
+                        local _UIStroke2 = Instance.new('UIStroke')
+
+                        _UIStroke2.Thickness = 1
+                        _UIStroke2.Color = Color3.fromRGB(128, 128, 128)
+                        _UIStroke2.Parent = _Highlight
+
+                        local _Head = v73.Character:FindFirstChild('Head')
+                        local _BillboardGui = Instance.new('BillboardGui')
+
+                        _BillboardGui.Name = 'ESPName'
+                        _BillboardGui.Adornee = _Head
+                        _BillboardGui.Size = UDim2.new(0, 100, 0, 30)
+                        _BillboardGui.StudsOffset = Vector3.new(0, 2, 0)
+                        _BillboardGui.AlwaysOnTop = true
+                        _BillboardGui.MaxDistance = 100
+                        _BillboardGui.Parent = v73.Character
+
+                        local _TextLabel6 = Instance.new('TextLabel')
+
+                        _TextLabel6.Size = UDim2.new(1, 0, 1, 0)
+                        _TextLabel6.BackgroundTransparency = 1
+                        _TextLabel6.Text = v73.Name
+                        _TextLabel6.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        _TextLabel6.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                        _TextLabel6.TextStrokeTransparency = 0.5
+                        _TextLabel6.Font = Enum.Font.GothamBold
+                        _TextLabel6.TextSize = 14
+                        _TextLabel6.TextScaled = true
+                        _TextLabel6.Parent = _BillboardGui
+                        u67[v73] = {
+                            Highlight = _Highlight,
+                            Stroke = _UIStroke2,
+                            BillboardGui = _BillboardGui,
+                        }
+                    end
+                end
+
+                u66.PlayerAdded = game.Players.PlayerAdded:Connect(function(p79)
+                    if p79 ~= _LocalPlayer then
+                        p79.CharacterAdded:Connect(function(p80)
+                            if u58 then
+                                local _Highlight2 = Instance.new('Highlight')
+
+                                _Highlight2.Adornee = p80
+                                _Highlight2.FillColor = Color3.fromRGB(0, 0, 0)
+                                _Highlight2.FillTransparency = 0.3
+                                _Highlight2.OutlineTransparency = 0
+                                _Highlight2.OutlineColor = Color3.fromRGB(128, 128, 128)
+                                _Highlight2.Parent = p80
+
+                                local _UIStroke3 = Instance.new('UIStroke')
+
+                                _UIStroke3.Thickness = 1
+                                _UIStroke3.Color = Color3.fromRGB(128, 128, 128)
+                                _UIStroke3.Parent = _Highlight2
+
+                                local _Head2 = p80:FindFirstChild('Head')
+                                local _BillboardGui2 = Instance.new('BillboardGui')
+
+                                _BillboardGui2.Name = 'ESPName'
+                                _BillboardGui2.Adornee = _Head2
+                                _BillboardGui2.Size = UDim2.new(0, 100, 0, 30)
+                                _BillboardGui2.StudsOffset = Vector3.new(0, 2, 0)
+                                _BillboardGui2.AlwaysOnTop = true
+                                _BillboardGui2.MaxDistance = 100
+                                _BillboardGui2.Parent = p80
+
+                                local _TextLabel7 = Instance.new('TextLabel')
+
+                                _TextLabel7.Size = UDim2.new(1, 0, 1, 0)
+                                _TextLabel7.BackgroundTransparency = 1
+                                _TextLabel7.Text = p79.Name
+
+                                _TextLabel7.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                _TextLabel7.TextStrokeColor3 = Color3.fromRGB(0, 0, 0)
+                                _TextLabel7.TextStrokeTransparency = 0.5
+                                _TextLabel7.Font = Enum.Font.GothamBold
+                                _TextLabel7.TextSize = 14
+                                _TextLabel7.TextScaled = true
+                                _TextLabel7.Parent = _BillboardGui2
+                                u67[p79] = {
+                                    Highlight = _Highlight2,
+                                    Stroke = _UIStroke3,
+                                    BillboardGui = _BillboardGui2,
+                                }
+                            end
+                        end)
+                    end
+                end)
+                u66.PlayerRemoving = game.Players.PlayerRemoving:Connect(function(p86)
+                    if u67[p86] then
+                        u67[p86].Highlight:Destroy()
+                        u67[p86].BillboardGui:Destroy()
+
+                        u67[p86] = nil
+                    end
+                end)
+            else
+                _TextButton15.Text = 'ESP PLAYER'
+                _TextButton15.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+                local v87, v88, v89 = pairs(u67)
+
+                while true do
+                    local v90
+
+                    v89, v90 = v87(v88, v89)
+
+                    if v89 == nil then
+                        break
+                    end
+
+                    v90.Highlight:Destroy()
+                    v90.BillboardGui:Destroy()
+                end
+
+                u67 = {}
+
+                local v91, v92, v93 = pairs(u66)
+
+                while true do
+                    local v94
+
+                    v93, v94 = v91(v92, v93)
+
+                    if v93 == nil then
+                        break
+                    end
+
+                    v94:Disconnect()
+                end
+
+                u66 = {}
+            end
+        end)
+
+        if not v95 then
+            warn('Error in playerESPFunction: ' .. tostring(v96))
+        end
+    end
+    local function u101()
+        if u57 then
+            return
+        else
+            u57 = true
+            _TextButton13.Text = 'ANTI-DIE (ON)'
+            _TextButton13.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+
+            local u98 = _LocalPlayer.Character or _LocalPlayer.CharacterAdded:Wait()
+            local _Humanoid = u98:FindFirstChildOfClass('Humanoid')
+
+            if _Humanoid then
+                _Humanoid.BreakJointsOnDeath = false
+
+                _Humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+                _Humanoid:GetPropertyChangedSignal('Health'):Connect(function()
+                    if _Humanoid.Health <= 0 then
+                        _Humanoid.Health = _Humanoid.MaxHealth
+                    end
+                end)
+                _Humanoid.Died:Connect(function()
+                    task.wait()
+
+                    local _Humanoid2 = Instance.new('Humanoid')
+
+                    _Humanoid2.Name = 'ReplacedHumanoid'
+                    _Humanoid2.Parent = u98
+                    workspace.CurrentCamera.CameraSubject = _Humanoid2
+
+                    _Humanoid:Destroy()
+                end)
+            end
+        end
+    end
+    local function u104()
+        if u57 then
+            u57 = false
+            _TextButton13.Text = 'ANTI-DIE'
+            _TextButton13.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+            local _Character = _LocalPlayer.Character
+            local v103 = _Character and _Character:FindFirstChildOfClass('Humanoid')
+
+            if v103 then
+                v103.BreakJointsOnDeath = true
+
+                v103:SetStateEnabled(Enum.HumanoidStateType.Dead, true)
+            end
+        end
+    end
+    local function u113()
+        if not _LocalPlayer.Character or _LocalPlayer.Character.Humanoid.Health <= 0 then
+            return false
+        end
+
+        u61 = _LocalPlayer.Character.Humanoid.HipHeight
+        u60 = _LocalPlayer.Character:FindFirstChild('HumanoidRootPart')
+
+        if not u60 then
+            return false
+        end
+
+        local _Model = Instance.new('Model', game)
+
+        _LocalPlayer.Character.Parent = _Model
+        u59 = u60:Clone()
+        u59.Parent = _LocalPlayer.Character
+        u60.Parent = workspace.CurrentCamera
+        u59.CFrame = u60.CFrame
+        _LocalPlayer.Character.PrimaryPart = u59
+        _LocalPlayer.Character.Parent = workspace
+
+        local v106, v107, v108 = pairs(_LocalPlayer.Character:GetDescendants())
+
+        while true do
+            local v109
+
+            v108, v109 = v106(v107, v108)
+
+            if v108 == nil then
+                break
+            end
+            if v109:IsA('Weld') or v109:IsA('Motor6D') then
+                if v109.Part0 == u60 then
+                    v109.Part0 = u59
+                end
+                if v109.Part1 == u60 then
+                    v109.Part1 = u59
+                end
+            end
+        end
+
+        _Model:Destroy()
+
+        local _Humanoid3 = _LocalPlayer.Character:FindFirstChild('Humanoid')
+
+        if not _Humanoid3 then
+            return false
+        end
+
+        local _Animation = Instance.new('Animation')
+
+        _Animation.AnimationId = 'http://www.roblox.com/asset/?id=18537363391'
+        u62 = (_Humanoid3:FindFirstChild('Animator') or Instance.new('Animator', _Humanoid3)):LoadAnimation(_Animation)
+
+        u62:Play(0, 1, 0)
+        _Animation:Destroy()
+
+        u62.TimePosition = 0.7
+
+        u62:AdjustSpeed(math.huge)
+
+        u63 = game:GetService('RunService').PreSimulation:Connect(function()
+            local v112 = _LocalPlayer.Character and (u60 and _LocalPlayer.Character.PrimaryPart)
+
+            if v112 then
+                u60.CFrame = (v112.CFrame - Vector3.new(0, _LocalPlayer.Character.Humanoid.HipHeight + v112.Size.Y / 2 - 1 + 0.09, 0)) * CFrame.Angles(math.rad(180), 0, 0)
+                u60.Velocity = v112.Velocity
+                u60.CanCollide = false
+            end
+        end)
+
+        return true
+    end
+    local function u120()
+        if u62 then
+            u62:Stop()
+            u62:Destroy()
+
+            u62 = nil
+        end
+        if u63 then
+            u63:Disconnect()
+        end
+        if u60 then
+            local _Model2 = Instance.new('Model', game)
+
+            _LocalPlayer.Character.Parent = _Model2
+            u60.Parent = _LocalPlayer.Character
+            _LocalPlayer.Character.PrimaryPart = u60
+            _LocalPlayer.Character.Parent = workspace
+            u60.CanCollide = true
+
+            local v115, v116, v117 = pairs(_LocalPlayer.Character:GetDescendants())
+
+            while true do
+                local v118
+
+                v117, v118 = v115(v116, v117)
+
+                if v117 == nil then
+                    break
+                end
+                if v118:IsA('Weld') or v118:IsA('Motor6D') then
+                    if v118.Part0 == u59 then
+                        v118.Part0 = u60
+                    end
+                    if v118.Part1 == u59 then
+                        v118.Part1 = u60
+                    end
+                end
+            end
+
+            if u59 then
+                local _CFrame = u59.CFrame
+
+                u59:Destroy()
+
+                u59 = nil
+                u60.CFrame = _CFrame
+            end
+
+            u60 = nil
+            _LocalPlayer.Character.Humanoid.HipHeight = u61
+        end
+    end
+    local function v123()
+        local v121, v122 = pcall(function()
+            if u53 then
+                u120()
+
+                u53 = false
+                u55 = false
+                _TextButton8.Text = 'HIDE BRAINROT'
+                _TextButton8.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+                u104()
+            elseif u113() then
+                u53 = true
+                _TextButton8.Text = 'HIDE BRAINROT (ON)'
+                _TextButton8.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+                u55 = true
+
+                u101()
+                coroutine.wrap(function()
+                    while u55 and u53 do
+                        task.wait(2.75)
+
+                        if u55 and u53 then
+                            u120()
+                            task.wait(0.85)
+
+                            if u55 and u53 then
+                                u113()
+                            end
+                        end
+                    end
+                end)()
+            end
+        end)
+
+        if not v121 then
+            warn('Error in hideBrainrotFunction: ' .. tostring(v122))
+        end
+    end
+    local function v126()
+        local v124, v125 = pcall(function()
+            if u54 then
+                u120()
+
+                u54 = false
+                _TextButton12.Text = 'AFK HIDE BRAINROT'
+                _TextButton12.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+                u104()
+            elseif u113() then
+                u54 = true
+                _TextButton12.Text = 'AFK HIDE BRAINROT (ON)'
+                _TextButton12.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+
+                u101()
+            end
+        end)
+
+        if not v124 then
+            warn('Error in afkHideBrainrotFunction: ' .. tostring(v125))
+        end
+    end
+    local function v142()
+        local v140, v141 = pcall(function()
+            if u56 then
+                u56 = false
+                _TextButton10.Text = 'FLOAT UP'
+                _TextButton10.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+                if u64 then
+                    u64:Disconnect()
+
+                    u64 = nil
+                end
+
+                local _L1GHTPlatform = workspace:FindFirstChild('L1GHTPlatform')
+
+                if _L1GHTPlatform then
+                    _L1GHTPlatform:Destroy()
+                end
+            else
+                u56 = true
+                _TextButton10.Text = 'FLOAT UP (ON)'
+                _TextButton10.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+
+                local _Character2 = _LocalPlayer.Character
+
+                if not _Character2 then
+                    return
+                end
+
+                local _HumanoidRootPart = _Character2:FindFirstChild('HumanoidRootPart')
+
+                if not _HumanoidRootPart then
+                    return
+                end
+
+                local _Part = Instance.new('Part')
+
+                _Part.Name = 'L1GHTPlatform'
+                _Part.Size = Vector3.new(10, 1, 10)
+                _Part.Position = _HumanoidRootPart.Position - Vector3.new(0, 3, 0)
+                _Part.Anchored = true
+                _Part.CanCollide = true
+                _Part.Material = Enum.Material.Neon
+                _Part.BrickColor = BrickColor.new('Really black')
+                _Part.Transparency = 0.4
+
+                local _SurfaceGui = Instance.new('SurfaceGui')
+
+                _SurfaceGui.Face = Enum.NormalId.Top
+                _SurfaceGui.AlwaysOnTop = true
+                _SurfaceGui.Parent = _Part
+
+                local _Frame11 = Instance.new('Frame')
+
+                _Frame11.Size = UDim2.new(1, 0, 1, 0)
+                _Frame11.BackgroundTransparency = 1
+                _Frame11.Parent = _SurfaceGui
+
+                local _UIStroke4 = Instance.new('UIStroke')
+
+                _UIStroke4.Thickness = 4
+                _UIStroke4.Color = Color3.new(1, 0, 0)
+                _UIStroke4.Parent = _Frame11
+                _Part.Parent = workspace
+
+                local u134 = 0
+                local u135 = 0.1
+
+                u64 = game:GetService('RunService').Heartbeat:Connect(function()
+                    if _Part and _Part.Parent then
+                        u134 = (u134 + 0.02) % 1
+                        _UIStroke4.Color = Color3.fromHSV(u134, 1, 1)
+
+                        local _Character3 = _LocalPlayer.Character
+                        local v137 = _Character3 and (_Character3:FindFirstChild('HumanoidRootPart') and _Character3:FindFirstChildOfClass('Humanoid'))
+
+                        if v137 then
+                            local v138 = _Character3.HumanoidRootPart.Position - Vector3.new(0, v137.HipHeight + 2, 0)
+                            local v139 = _Part.Position + Vector3.new(0, u135, 0)
+
+                            _Part.Position = Vector3.new(v138.X, v139.Y, v138.Z)
+                        end
+                    end
+                end)
+            end
+        end)
+
+        if not v140 then
+            warn('Error in floatUpFunction: ' .. tostring(v141))
+        end
+    end
+    local function v148()
+        local v146, v147 = pcall(function()
+            if u68 then
+                u68 = false
+                _TextButton11.Text = 'FLOAT FALL'
+                _TextButton11.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+
+                if u69 then
+                    u69:Disconnect()
+
+                    u69 = nil
+                end
+            else
+                u68 = true
+                _TextButton11.Text = 'FLOAT FALL (ON)'
+                _TextButton11.BackgroundColor3 = Color3.fromRGB(80, 20, 20)
+
+                local _Character4 = _LocalPlayer.Character
+
+                if not _Character4 then
+                    return
+                end
+
+                local _Humanoid4 = _Character4:FindFirstChildOfClass('Humanoid')
+                local _HumanoidRootPart2 = _Character4:FindFirstChild('HumanoidRootPart')
+
+                if _Humanoid4 and _HumanoidRootPart2 then
+                    _Humanoid4:ChangeState(Enum.HumanoidStateType.Jumping)
+
+                    u69 = game:GetService('RunService').Heartbeat:Connect(function()
+                        if u68 and _HumanoidRootPart2 then
+                            _HumanoidRootPart2.Velocity = Vector3.new(_HumanoidRootPart2.Velocity.X, 0, _HumanoidRootPart2.Velocity.Z)
+                        end
+                    end)
+                end
+            end
+        end)
+
+        if not v146 then
+            warn('Error in floatFallFunction: ' .. tostring(v147))
+        end
+    end
+    local function v151()
+        local v149, v150 = pcall(function()
+            if u57 then
+                u104()
+            else
+                u101()
+            end
+        end)
+
+        if not v149 then
+            warn('Error in antiDieFunction: ' .. tostring(v150))
+        end
+    end
+    local function v156()
+        local v154, v155 = pcall(function()
+            local _TweenService = game:GetService('TweenService')
+            local v153 = TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.InOut)
+
+            u65 = not u65
+
+            if u65 then
+                _TextButton2.Text = '\u{25a1}'
+                _TextLabel.Text = 'L1GHT HUB'
+                _TextLabel2.Text = 'L1GHT HUB'
+                _TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+                _TextLabel.Position = UDim2.new(0, 10, 0, 0)
+                _TextLabel.Size = UDim2.new(1, -40, 1, 0)
+                _TextLabel2.Position = UDim2.new(0, 11, 0, 1)
+                _TextLabel2.Size = UDim2.new(1, -40, 1, 0)
+                _Frame5.Visible = false
+                _Frame4.Visible = false
+                _Frame3.Visible = false
+
+                _TweenService:Create(_Frame, v153, {
+                    Size = UDim2.new(0, 200, 0, 50),
+                    Position = UDim2.new(_Frame.Position.X.Scale, _Frame.Position.X.Offset, 
+_Frame.Position.Y.Scale, _Frame.Position.Y.Offset),
+                }):Play()
+            else
+                _TextButton2.Text = '\u{25a1}'
+                _TextLabel.Text = 'L1GHT HUB PREMIUM'
+                _TextLabel2.Text = 'L1GHT HUB PREMIUM'
+                _TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+                _TextLabel.Position = UDim2.new(0, 10, 0, 0)
+                _TextLabel.Size = UDim2.new(1, -40, 1, 0)
+                _TextLabel2.Position = UDim2.new(0, 11, 0, 1)
+                _TextLabel2.Size = UDim2.new(1, -40, 1, 0)
+                _Frame5.Visible = true
+                _Frame4.Visible = true
+                _Frame3.Visible = true
+
+                _TweenService:Create(_Frame, v153, {
+                    Size = UDim2.new(0, 280, 0, 200),
+                    Position = UDim2.new(_Frame.Position.X.Scale, _Frame.Position.X.Offset, _Frame.Position.Y.Scale, _Frame.Position.Y.Offset),
+                }):Play()
+            end
+        end)
+
+        if not v154 then
+            warn('Error in shrinkFunction: ' .. tostring(v155))
+        end
+    end
+    local function v160()
+        local v158, v159 = pcall(function()
+            local v157 = game:GetService('TweenService'):Create(_Frame, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+                Size = UDim2.new(0, 0, 0, 0),
+                Position = UDim2.new(0.5, 0, 0.5, 0),
+            })
+
+            v157:Play()
+            v157.Completed:Connect(function()
+                _ScreenGui:Destroy()
+            end)
+        end)
+
+        if not v158 then
+            warn('Error in closeFunction: ' .. tostring(v159))
+        end
+    end
+
+    _TextButton8.MouseButton1Click:Connect(v123)
+    _TextButton9.MouseButton1Click:Connect(function()
+        local v229, v230 = pcall(function()
+            local _Players = game:GetService('Players')
+            local _ReplicatedStorage = game:GetService('ReplicatedStorage')
+            local _TweenService2 = game:GetService('TweenService')
+            local _UserInputService = game:GetService('UserInputService')
+            local _LocalPlayer2 = _Players.LocalPlayer
+            local v166 = _LocalPlayer2
+            local u167 = _LocalPlayer2.WaitForChild(v166, 'PlayerGui')
+            local u168 = {
+                desyncState = false,
+                gui = nil,
+                button = nil,
+                mainFrame = nil,
+            }
+
+            local function u187()
+                local v185, v186 = pcall(function()
+                    local _Backpack = _LocalPlayer2:WaitForChild('Backpack')
+                    local v170 = _LocalPlayer2.Character or _LocalPlayer2.CharacterAdded:Wait()
+                    local _Humanoid5 = v170:WaitForChild('Humanoid')
+                    local _Packages = _ReplicatedStorage:WaitForChild('Packages', 5)
+
+                    if not _Packages then
+                        warn('Packages not found in ReplicatedStorage')
+
+                        return false
+                    end
+
+                    local _Net = _Packages:WaitForChild('Net', 5)
+
+                    if not _Net then
+                        warn('Net folder not found')
+
+                        return false
+                    end
+
+                    local _REUseItem = _Net:WaitForChild('RE/UseItem', 5)
+                    local _REQuantumClonerOnTeleport = _Net:WaitForChild('RE/QuantumCloner/OnTeleport', 5)
+
+                    if not (_REUseItem and _REQuantumClonerOnTeleport) then
+                        warn('Required remotes not found')
+
+                        return false
+                    end
+
+                    local v176, v177, v178 = ipairs({
+                        'Quantum Cloner',
+                        'Brainrot',
+                        'brainrot',
+                    })
+                    local v179 = nil
+
+                    while true do
+                        local v180
+
+                        v178, v180 = v176(v177, v178)
+
+                        if v178 == nil then
+                            break
+                        end
+
+                        v179 = _Backpack:FindFirstChild(v180) or v170:FindFirstChild(v180)
+
+                        if v179 then
+                            print('Tool found: ' .. v179.Name)
+
+                            break
+                        end
+                    end
+
+                    local v181
+
+                    if v179 then
+                        v181 = v179
+                    else
+                        local v182, v183, v184 = ipairs(_Backpack:GetChildren())
+
+                        while true do
+                            v184, v181 = v182(v183, v184)
+
+                            if v184 == nil then
+                                v181 = v179
+
+                                break
+                            end
+                            if v181:IsA('Tool') then
+                                print('Using alternative tool: ' .. v181.Name)
+
+                                break
+                            end
+                        end
+                    end
+                    if v181 then
+                        if v181.Parent == _Backpack then
+                            _Humanoid5:EquipTool(v181)
+                            task.wait(0.5)
+                            print('Tool equipped: ' .. v181.Name)
+                        end
+                    else
+                        print('No tool found, attempting to continue...')
+                    end
+                    if setfflag then
+                        setfflag('WorldStepMax', '-9999999999')
+                    else
+                        warn('setfflag not available, desync may not work fully')
+                    end
+
+                    task.wait(0.2)
+                    _REUseItem:FireServer()
+                    task.wait(1)
+                    _REQuantumClonerOnTeleport:FireServer()
+                    task.wait(2)
+
+                    if setfflag then
+                        setfflag('WorldStepMax', '-1')
+                    end
+
+                    print('Mobile Desync activated successfully!')
+
+                    return true
+                end)
+
+                if v185 then
+                    return v185
+                end
+
+                warn('Error enabling desync: ' .. tostring(v186))
+
+                return false
+            end
+            local function u188()
+                pcall(function()
+                    if setfflag then
+                        setfflag('WorldStepMax', '-1')
+                    end
+
+                    print('Mobile Desync deactivated!')
+                end)
+            end
+
+            function u168.createGUI()
+                local _ScreenGui2 = Instance.new('ScreenGui')
+
+                _ScreenGui2.Name = 'L1GHTHubPremium'
+                _ScreenGui2.ResetOnSpawn = false
+                _ScreenGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+                _ScreenGui2.Parent = u167
+                _ScreenGui2.Enabled = true
+
+                local _Frame12 = Instance.new('Frame')
+
+                _Frame12.Name = 'MainFrame'
+                _Frame12.Size = UDim2.new(0, 200, 0, 100)
+                _Frame12.Position = UDim2.new(1, -210, 0, 10)
+                _Frame12.BackgroundColor3 = Color3.fromRGB(5, 5, 5)
+                _Frame12.BorderSizePixel = 0
+                _Frame12.Active = true
+                _Frame12.Parent = _ScreenGui2
+
+                local _UICorner = Instance.new('UICorner')
+
+                _UICorner.CornerRadius = UDim.new(0, 16)
+                _UICorner.Parent = _Frame12
+
+                local _UIStroke5 = Instance.new('UIStroke')
+
+                _UIStroke5.Color = Color3.fromRGB(50, 50, 50)
+                _UIStroke5.Thickness = 1
+                _UIStroke5.Transparency = 0.2
+                _UIStroke5.Parent = _Frame12
+
+                local _Frame13 = Instance.new('Frame')
+
+                _Frame13.Name = 'Header'
+                _Frame13.Size = UDim2.new(1, 0, 0, 40)
+                _Frame13.Position = UDim2.new(0, 0, 0, 0)
+                _Frame13.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+                _Frame13.BorderSizePixel = 0
+                _Frame13.Parent = _Frame12
+
+                local _UICorner2 = Instance.new('UICorner')
+
+                _UICorner2.CornerRadius = UDim.new(0, 16)
+                _UICorner2.Parent = _Frame13
+
+                local _Frame14 = Instance.new('Frame')
+
+                _Frame14.Size = UDim2.new(1, 0, 0, 16)
+                _Frame14.Position = UDim2.new(0, 0, 1, -16)
+                _Frame14.BackgroundColor3 = Color3.fromRGB(10, 10, 10)
+                _Frame14.BorderSizePixel = 0
+                _Frame14.Parent = _Frame13
+
+                local _TextLabel8 = Instance.new('TextLabel')
+
+                _TextLabel8.Name = 'TitleLabel'
+                _TextLabel8.Size = UDim2.new(1, -50, 1, 0)
+                _TextLabel8.Position = UDim2.new(0, 16, 0, 0)
+                _TextLabel8.BackgroundTransparency = 1
+                _TextLabel8.Text = 'L1GHT HUB'
+                _TextLabel8.TextColor3 = Color3.fromRGB(255, 255, 255)
+                _TextLabel8.TextSize = 18
+                _TextLabel8.TextXAlignment = Enum.TextXAlignment.Left
+                _TextLabel8.TextYAlignment = Enum.TextYAlignment.Center
+                _TextLabel8.Font = Enum.Font.GothamBold
+                _TextLabel8.Parent = _Frame13
+
+                local _TextLabel9 = Instance.new('TextLabel')
+
+                _TextLabel9.Size = UDim2.new(1, -50, 1, 0)
+                _TextLabel9.Position = UDim2.new(0, 17, 0, 1)
+                _TextLabel9.BackgroundTransparency = 1
+                _TextLabel9.TextColor3 = Color3.fromRGB(0, 0, 0)
+                _TextLabel9.TextTransparency = 0.7
+                _TextLabel9.Text = 'L1GHT HUB'
+                _TextLabel9.Font = Enum.Font.GothamBold
+                _TextLabel9.TextSize = 18
+                _TextLabel9.TextXAlignment = Enum.TextXAlignment.Left
+                _TextLabel9.TextYAlignment = Enum.TextYAlignment.Center
+                _TextLabel9.ZIndex = _TextLabel8.ZIndex - 1
+                _TextLabel9.Parent = _Frame13
+
+                local _UIStroke6 = Instance.new('UIStroke')
+
+                _UIStroke6.Color = Color3.fromRGB(0, 0, 0)
+                _UIStroke6.Thickness = 1
+                _UIStroke6.Transparency = 0.5
+                _UIStroke6.Parent = _TextLabel8
+
+                local _TextButton18 = Instance.new('TextButton')
+
+                _TextButton18.Name = 'CloseButton'
+                _TextButton18.Size = UDim2.new(0, 32, 0, 32)
+                _TextButton18.Position = UDim2.new(1, -36, 0, 4)
+                _TextButton18.BackgroundColor3 = Color3.fromRGB(15, 15, 15)
+                _TextButton18.BorderSizePixel = 0
+                _TextButton18.Text = 'X'
+                _TextButton18.TextColor3 = Color3.fromRGB(255, 255, 255)
+                _TextButton18.TextSize = 14
+                _TextButton18.Font = Enum.Font.GothamBold
+                _TextButton18.Parent = _Frame13
+
+                local _UICorner3 = Instance.new('UICorner')
+
+                _UICorner3.CornerRadius = UDim.new(0, 8)
+                _UICorner3.Parent = _TextButton18
+
+                _TextButton18.MouseEnter:Connect(function()
+                    _TweenService2:Create(_TextButton18, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+                        TextColor3 = Color3.fromRGB(0, 0, 0),
+                        Size = UDim2.new(0, 34, 0, 34),
+                    }):Play()
+                end)
+                _TextButton18.MouseLeave:Connect(function()
+                    _TweenService2:Create(_TextButton18, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        BackgroundColor3 = Color3.fromRGB(15, 15, 15),
+                        TextColor3 = Color3.fromRGB(255, 255, 255),
+                        Size = UDim2.new(0, 32, 0, 32),
+                    }):Play()
+                end)
+                _TextButton18.MouseButton1Click:Connect(function()
+                    local v201 = _TweenService2:Create(_Frame12, TweenInfo.new(0.3, Enum.EasingStyle.Back, Enum.EasingDirection.In), {
+                        Size = UDim2.new(0, 0, 0, 0),
+                        Position = UDim2.new(0.5, 0, 0.5, 0),
+                    })
+
+                    v201:Play()
+                    v201.Completed:Connect(function()
+                        u168.destroy()
+                    end)
+                end)
+
+                local _Frame15 = Instance.new('Frame')
+
+                _Frame15.Name = 'Content'
+                _Frame15.Size = UDim2.new(1, -24, 1, -48)
+                _Frame15.Position = UDim2.new(0, 12, 0, 44)
+                _Frame15.BackgroundTransparency = 1
+                _Frame15.Parent = _Frame12
+
+                local _TextButton19 = Instance.new('TextButton')
+
+                _TextButton19.Name = 'DesyncButton'
+                _TextButton19.Size = UDim2.new(1, 0, 0, 40)
+                _TextButton19.Position = UDim2.new(0, 0, 0, 0)
+                _TextButton19.BackgroundColor3 = Color3.fromRGB(20, 20, 20)
+                _TextButton19.BorderSizePixel = 0
+                _TextButton19.Text = ''
+                _TextButton19.Parent = _Frame15
+
+                local _UICorner4 = Instance.new('UICorner')
+
+                _UICorner4.CornerRadius = UDim.new(0, 12)
+                _UICorner4.Parent = _TextButton19
+
+                local _UIStroke7 = Instance.new('UIStroke')
+
+                _UIStroke7.Color = Color3.fromRGB(50, 50, 50)
+                _UIStroke7.Thickness = 1
+                _UIStroke7.Transparency = 0.7
+                _UIStroke7.Parent = _TextButton19
+
+                local _Frame16 = Instance.new('Frame')
+
+                _Frame16.Size = UDim2.new(1, -24, 1, 0)
+                _Frame16.Position = UDim2.new(0, 12, 0, 0)
+                _Frame16.BackgroundTransparency = 1
+                _Frame16.Parent = _TextButton19
+
+                local _TextLabel10 = Instance.new('TextLabel')
+
+                _TextLabel10.Name = 'ButtonLabel'
+                _TextLabel10.Size = UDim2.new(1, -60, 1, 0)
+                _TextLabel10.Position = UDim2.new(0, 0, 0, 0)
+                _TextLabel10.BackgroundTransparency = 1
+                _TextLabel10.Text = 'L1ght Desync'
+                _TextLabel10.TextColor3 = Color3.fromRGB(255, 255, 255)
+                _TextLabel10.TextSize = 14
+                _TextLabel10.TextXAlignment = Enum.TextXAlignment.Left
+                _TextLabel10.TextYAlignment = Enum.TextYAlignment.Center
+                _TextLabel10.Font = Enum.Font.GothamMedium
+                _TextLabel10.Parent = _Frame16
+
+                local _Frame17 = Instance.new('Frame')
+
+                _Frame17.Name = 'ToggleSwitch'
+                _Frame17.Size = UDim2.new(0, 48, 0, 24)
+                _Frame17.Position = UDim2.new(1, -48, 0.5, -12)
+                _Frame17.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+                _Frame17.BorderSizePixel = 0
+                _Frame17.Parent = _Frame16
+
+                local _UICorner5 = Instance.new('UICorner')
+
+                _UICorner5.CornerRadius = UDim.new(0, 12)
+                _UICorner5.Parent = _Frame17
+
+                local _Frame18 = Instance.new('Frame')
+
+                _Frame18.Name = 'ToggleKnob'
+                _Frame18.Size = UDim2.new(0, 20, 0, 20)
+                _Frame18.Position = UDim2.new(0, 2, 0, 2)
+                _Frame18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                _Frame18.BorderSizePixel = 0
+                _Frame18.Parent = _Frame17
+
+                local _UICorner6 = Instance.new('UICorner')
+
+                _UICorner6.CornerRadius = UDim.new(0, 10)
+                _UICorner6.Parent = _Frame18
+                u168.gui = _ScreenGui2
+                u168.button = _TextButton19
+                u168.mainFrame = _Frame12
+                u168.toggleSwitch = _Frame17
+                u168.toggleKnob = _Frame18
+                u168.buttonStroke = _UIStroke7
+
+                u168.makeDraggable(_Frame13)
+                _TextButton19.MouseButton1Click:Connect(function()
+                    u168.toggleDesync()
+                end)
+                _TextButton19.MouseEnter:Connect(function()
+                    _TweenService2:Create(_UIStroke7, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Transparency = 0.3}):Play()
+                end)
+                _TextButton19.MouseLeave:Connect(function()
+                    _TweenService2:Create(_UIStroke7, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Transparency = 0.7}):Play()
+                end)
+
+                return _ScreenGui2
+            end
+            function u168.makeDraggable(p212)
+                local u213 = false
+                local u214 = nil
+                local u215 = nil
+                local _mainFrame = u168.mainFrame
+
+                local function u218(p217)
+                    u213 = true
+                    u214 = p217.Position
+                    u215 = _mainFrame.Position
+
+                    _TweenService2:Create(_mainFrame, TweenInfo.new(0.1, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        Size = UDim2.new(0, 205, 0, 105),
+                    }):Play()
+                end
+                local function u219()
+                    u213 = false
+
+                    _TweenService2:Create(_mainFrame, TweenInfo.new(0.2, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        Size = UDim2.new(0, 200, 0, 100),
+                    }):Play()
+                end
+                local function u222(p220)
+                    if u213 then
+                        local v221 = p220.Position - u214
+
+                        _mainFrame.Position = UDim2.new(u215.X.Scale, u215.X.Offset + v221.X, u215.Y.Scale, u215.Y.Offset + v221.Y)
+                    end
+                end
+
+                p212.InputBegan:Connect(function(p223)
+                    if p223.UserInputType == Enum.UserInputType.MouseButton1 or p223.UserInputType == Enum.UserInputType.Touch then
+                        u218(p223)
+                    end
+                end)
+                p212.InputEnded:Connect(function(p224)
+                    if p224.UserInputType == Enum.UserInputType.MouseButton1 or p224.UserInputType == Enum.UserInputType.Touch then
+                        u219()
+                    end
+                end)
+                _UserInputService.InputChanged:Connect(function(p225)
+                    if p225.UserInputType == Enum.UserInputType.MouseMovement or p225.UserInputType == Enum.UserInputType.Touch then
+                        u222(p225)
+                    end
+                end)
+            end
+            function u168.toggleDesync()
+                u168.desyncState = not u168.desyncState
+
+                u168.updateButtonAppearance()
+
+                if u168.desyncState then
+                    if not u187() then
+                        u168.desyncState = false
+
+                        u168.updateButtonAppearance()
+                    end
+                else
+                    u188()
+                end
+            end
+            function u168.updateButtonAppearance()
+                local _toggleSwitch = u168.toggleSwitch
+                local _toggleKnob = u168.toggleKnob
+
+                if u168.desyncState then
+                    _TweenService2:Create(_toggleSwitch, TweenInfo.new(0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+                    }):Play()
+                    _TweenService2:Create(_toggleKnob, TweenInfo.new(0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        Position = UDim2.new(1, -22, 0, 2),
+                        BackgroundColor3 = Color3.fromRGB(0, 0, 0),
+                    }):Play()
+                else
+                    _TweenService2:Create(_toggleSwitch, TweenInfo.new(0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        BackgroundColor3 = Color3.fromRGB(40, 40, 40),
+                    }):Play()
+                    _TweenService2:Create(_toggleKnob, TweenInfo.new(0.3, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {
+                        Position = UDim2.new(0, 2, 0, 2),
+                        BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+                    }):Play()
+                end
+            end
+            function u168.destroy()
+                if u168.gui then
+                    u168.gui:Destroy()
+
+                    u168.gui = nil
+                end
+            end
+            function u168.init()
+                local _L1GHTHubPremium = u167:FindFirstChild('L1GHTHubPremium')
+
+                if _L1GHTHubPremium then
+                    _L1GHTHubPremium:Destroy()
+                end
+
+                u168.createGUI()
+
+                u168.mainFrame.Size = UDim2.new(0, 0, 0, 0)
+                u168.mainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+
+                _TweenService2:Create(u168.mainFrame, TweenInfo.new(0.5, Enum.EasingStyle.Back, Enum.EasingDirection.Out), {
+                    Size = UDim2.new(0, 200, 0, 100),
+                    Position = UDim2.new(1, -210, 0, 10),
+                }):Play()
+            end
+
+            _LocalPlayer2.CharacterAdded:Connect(function()
+                u168.desyncState = false
+
+                if u168.toggleSwitch then
+                    u168.updateButtonAppearance()
+                end
+            end)
+            u168.init()
+        end)
+
+        if not v229 then
+            warn('Error in desyncGUIFunction: ' .. tostring(v230))
+        end
+    end)
+    _TextButton10.MouseButton1Click:Connect(v142)
+    _TextButton11.MouseButton1Click:Connect(v148)
+    _TextButton2.MouseButton1Click:Connect(v156)
+    _TextButton.MouseButton1Click:Connect(v160)
+    _TextButton12.MouseButton1Click:Connect(v126)
+    _TextButton13.MouseButton1Click:Connect(v151)
+    _TextButton14.MouseButton1Click:Connect(function()
+        local v234, v235 = pcall(function()
+            loadstring(game:HttpGet('https://pastefy.app/JD5u7Kz7/raw'))()
+
+            local _ScreenGui3 = Instance.new('ScreenGui')
+
+            _ScreenGui3.Parent = game.CoreGui
+
+            local _Frame19 = Instance.new('Frame')
+
+            _Frame19.Size = UDim2.new(0, 250, 0, 50)
+            _Frame19.Position = UDim2.new(0.5, -125, 0.1, 0)
+            _Frame19.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            _Frame19.BorderSizePixel = 0
+            _Frame19.Parent = _ScreenGui3
+
+            Instance.new('UICorner', _Frame19)
+
+            local _TextLabel11 = Instance.new('TextLabel')
+
+            _TextLabel11.Size = UDim2.new(1, 0, 1, 0)
+            _TextLabel11.Text = 'PET FINDER LOADED!'
+            _TextLabel11.TextColor3 = Color3.fromRGB(255, 255, 255)
+            _TextLabel11.BackgroundTransparency = 1
+            _TextLabel11.Font = Enum.Font.GothamBold
+            _TextLabel11.TextSize = 12
+            _TextLabel11.Parent = _Frame19
+
+            task.wait(2)
+            _ScreenGui3:Destroy()
+        end)
+
+        if not v234 then
+            warn('Error in petFinderFunction: ' .. tostring(v235))
+        end
+    end)
+    _TextButton15.MouseButton1Click:Connect(v97)
+    _TextButton16.MouseButton1Click:Connect(function()
+        local v240, v241 = pcall(function()
+            local u236 = 'https://discord.gg/PCbtaNqPzh'
+
+            pcall(function()
+                setclipboard(u236)
+            end)
+
+            local _ScreenGui4 = Instance.new('ScreenGui')
+
+            _ScreenGui4.Parent = game.CoreGui
+
+            local _Frame20 = Instance.new('Frame')
+
+            _Frame20.Size = UDim2.new(0, 250, 0, 50)
+            _Frame20.Position = UDim2.new(0.5, -125, 0.1, 0)
+            _Frame20.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            _Frame20.BorderSizePixel = 0
+            _Frame20.Parent = _ScreenGui4
+
+            Instance.new('UICorner', _Frame20)
+
+            local _TextLabel12 = Instance.new('TextLabel')
+
+            _TextLabel12.Size = UDim2.new(1, 0, 1, 0)
+            _TextLabel12.Text = 'DISCORD INVITE COPIED TO CLIPBOARD'
+            _TextLabel12.TextColor3 = Color3.fromRGB(255, 255, 255)
+            _TextLabel12.BackgroundTransparency = 1
+            _TextLabel12.Font = Enum.Font.GothamBold
+            _TextLabel12.TextSize = 12
+            _TextLabel12.Parent = _Frame20
+
+            task.wait(2)
+            _ScreenGui4:Destroy()
+        end)
+
+        if not v240 then
+            warn('Error in discordFunction: ' .. tostring(v241))
+        end
+    end)
+    _TextButton17.MouseButton1Click:Connect(function()
+        local v246, v247 = pcall(function()
+            local u242 = 'l1ght_hub'
+
+            pcall(function()
+                setclipboard(u242)
+            end)
+
+            local _ScreenGui5 = Instance.new('ScreenGui')
+
+            _ScreenGui5.Parent = game.CoreGui
+
+            local _Frame21 = Instance.new('Frame')
+
+            _Frame21.Size = UDim2.new(0, 250, 0, 50)
+            _Frame21.Position = UDim2.new(0.5, -125, 0.1, 0)
+            _Frame21.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            _Frame21.BorderSizePixel = 0
+            _Frame21.Parent = _ScreenGui5
+
+            Instance.new('UICorner', _Frame21)
+
+            local _TextLabel13 = Instance.new('TextLabel')
+
+            _TextLabel13.Size = UDim2.new(1, 0, 1, 0)
+            _TextLabel13.Text = 'USERNAME COPIED TO CLIPBOARD'
+            _TextLabel13.TextColor3 = Color3.fromRGB(255, 255, 255)
+            _TextLabel13.BackgroundTransparency = 1
+            _TextLabel13.Font = Enum.Font.GothamBold
+            _TextLabel13.TextSize = 12
+            _TextLabel13.Parent = _Frame21
+
+            task.wait(2)
+            _ScreenGui5:Destroy()
+        end)
+
+        if not v246 then
+            warn('Error in tikTokFunction: ' .. tostring(v247))
+        end
+    end)
+    print('GUI fully initialized. Should be visible now.')
+end)
+
+if not v248 then
+    warn('Script failed to initialize: ' .. tostring(v249))
+end
