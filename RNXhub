@@ -14,7 +14,7 @@ local LocalPlayer = Players.LocalPlayer
 local workspace = game:GetService("Workspace")
 
 local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "IceHubModernUI"
+screenGui.Name = "RNXhubModernGUI"
 screenGui.ResetOnSpawn = false
 local GUIParent = game:GetService("CoreGui")
 if gethui then GUIParent = gethui() end
@@ -22,9 +22,9 @@ screenGui.Parent = GUIParent
 
 local mainFrame = Instance.new("Frame")
 mainFrame.Name = "MainFrame"
-mainFrame.Size = UDim2.new(0, 240, 0, 280)
-mainFrame.Position = UDim2.new(0.5, -120, 0.5, -140)
-mainFrame.BackgroundColor3 = Color3.fromRGB(15, 15, 20)
+mainFrame.Size = UDim2.new(0, 240, 0, 160)
+mainFrame.Position = UDim2.new(0.5, -120, 0.5, -300)
+mainFrame.BackgroundColor3 = Color3.fromRGB(15, 100, 290)
 mainFrame.BackgroundTransparency = 0
 mainFrame.BorderSizePixel = 0
 mainFrame.ClipsDescendants = true
@@ -82,7 +82,7 @@ local function createButton(name, icon)
     button.Font = Enum.Font.GothamBold
     button.TextSize = 14
     button.TextColor3 = Color3.fromRGB(255, 255, 255)
-    button.BackgroundColor3 = Color3.fromRGB(25, 25, 30)
+    button.BackgroundColor3 = Color3.fromRGB(40, 0, 190)
     button.AutoButtonColor = false
     
     local corner = Instance.new("UICorner")
@@ -98,7 +98,7 @@ local function createButton(name, icon)
     button.Parent = buttonContainer
     
     button.MouseEnter:Connect(function()
-        TweenService:Create(button, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(35, 35, 40)}):Play()
+        TweenService:Create(button, TweenInfo.new(0.1), {BackgroundColor3 = Color3.fromRGB(15, 20, 3)}):Play()
         TweenService:Create(stroke, TweenInfo.new(0.1), {Transparency = 0.5}):Play()
     end)
     
@@ -112,28 +112,19 @@ local function createButton(name, icon)
 end
 
 
-local speedButton, speedStroke = createButton("Speed Boost (x1.5)", "⚡") -- ИЗМЕНЕНО: 1.5x
-local floorButton, floorStroke = createButton("3rd Floor Glitch", "🏢")
-local extraButton, extraStroke = createButton("Invisible - Desync", "🔄")
-local lagButton, lagStroke = createButton("Lag Server (Need Aura)", "💥")
+local speedButton, speedStroke = createButton("Steal boost (speed)", "⚡")
+local floorButton, floorStroke = createButton("Fly Platform", "👼")
+--local ServerLagButton, ServerLagStroke = createButton("Server Lags", "👼")
 
-local antiLagLabel = Instance.new("TextLabel")
-antiLagLabel.Size = UDim2.new(1, 0, 0, 20)
-antiLagLabel.Text = "🧹 Anti-Lag: ACTIVE (Auto)"
-antiLagLabel.Font = Enum.Font.Gotham
-antiLagLabel.TextSize = 10
-antiLagLabel.TextColor3 = Color3.fromRGB(0, 150, 75)
-antiLagLabel.BackgroundTransparency = 1
-antiLagLabel.Parent = buttonContainer
 
 
 local telegramBtn = Instance.new("TextButton")
 telegramBtn.Size = UDim2.new(1, 0, 0, 28)
 telegramBtn.Text = "📱 Telegram: @RUNEX_X_SCRIPT"
 telegramBtn.Font = Enum.Font.GothamBold
-telegramBtn.TextSize = 12
+telegramBtn.TextSize = 14
 telegramBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
-telegramBtn.BackgroundColor3 = Color3.fromRGB(0, 150, 255)
+telegramBtn.BackgroundColor3 = Color3.fromRGB(40, 0, 190)
 telegramBtn.AutoButtonColor = false
 telegramBtn.Parent = buttonContainer
 
@@ -214,7 +205,7 @@ end
 
 do
     local speedConn
-    local baseSpeed = 24 -- ИЗМЕНЕНО: 24 (1.5x от 16)
+    local baseSpeed = 30
     local active = false
     
     local function GetCharacter()
@@ -261,11 +252,15 @@ do
     end)
 end
 
+
+
+
+
 do
     local platform, connection
     local active = false
     local isRising = false
-    local RISE_SPEED = 15
+    local RISE_SPEED = 16
     
     local function destroyPlatform()
         if platform then platform:Destroy(); platform = nil end
@@ -283,12 +278,12 @@ do
         destroyPlatform()
         
         platform = Instance.new("Part")
-        platform.Size = Vector3.new(6, 0.5, 6)
+        platform.Size = Vector3.new(8, 0.5, 8)
         platform.Anchored = true
         platform.CanCollide = true
         platform.Transparency = 0
         platform.Material = Enum.Material.Neon
-        platform.Color = Color3.fromRGB(100, 200, 255)
+        platform.Color = Color3.fromRGB(280, 245, 265)
         platform.Position = root.Position - Vector3.new(0, root.Size.Y / 2 + platform.Size.Y / 2, 0)
         platform.Parent = workspace
         
@@ -339,206 +334,4 @@ do
         active = false
         toggleButtonState(floorButton, floorStroke, false)
     end)
-end
-
-do
-    local desyncActive = false
-    
-    local function enableMobileDesync()
-        local success = pcall(function()
-            local character = LocalPlayer.Character or LocalPlayer.CharacterAdded:Wait()
-            local humanoid = character:WaitForChild("Humanoid")
-            local backpack = LocalPlayer:WaitForChild("Backpack")
-            
-            local netFolder = ReplicatedStorage:FindFirstChild("Packages") and ReplicatedStorage.Packages:FindFirstChild("Net")
-            if not netFolder then return end
-            
-            local useItemRemote = netFolder:FindFirstChild("RE/UseItem", true)
-            local teleportRemote = netFolder:FindFirstChild("RE/QuantumCloner/OnTeleport", true)
-            
-            if not useItemRemote or not teleportRemote then
-                return
-            end
-            
-            local tool
-            local toolNames = {"Quantum Cloner", "Brainrot", "brainrot"}
-            for _, toolName in ipairs(toolNames) do
-                tool = backpack:FindFirstChild(toolName) or character:FindFirstChild(toolName)
-                if tool then break end
-            end
-            
-            if tool and tool.Parent == backpack then humanoid:EquipTool(tool); task.wait(0.3) end
-            
-            if setfflag then setfflag("WorldStepMax", "-9999999999") end
-            
-            task.spawn(function() useItemRemote:FireServer() end)
-            task.wait(0.1)
-            task.spawn(function() teleportRemote:FireServer() end)
-            task.wait(1)
-            
-            if setfflag then setfflag("WorldStepMax", "-1") end
-            
-        end)
-        return success
-    end
-    
-    local function disableMobileDesync()
-        pcall(function()
-            if setfflag then setfflag("WorldStepMax", "-1") end
-        end)
-    end
-    
-    extraButton.MouseButton1Click:Connect(function()
-        desyncActive = not desyncActive
-        if desyncActive then
-            local success = enableMobileDesync()
-            if success then
-                toggleButtonState(extraButton, extraStroke, true)
-            else
-                desyncActive = false
-                toggleButtonState(extraButton, extraStroke, false)
-            end
-        else
-            disableMobileDesync()
-            toggleButtonState(extraButton, extraStroke, false)
-        end
-    end)
-
-    LocalPlayer.CharacterAdded:Connect(function()
-        desyncActive = false
-        toggleButtonState(extraButton, extraStroke, false)
-    end)
-end
-
-do
-    local lagServerActive = false
-    local lagServerConnection
-    
-    local function keepDarkMatterEquipped()
-        if lagServerConnection then return end
-        
-        lagServerConnection = RunService.Heartbeat:Connect(function()
-            if not lagServerActive then return end
-            
-            local character = LocalPlayer.Character
-            local humanoid = character and character:FindFirstChildOfClass("Humanoid")
-            local backpack = LocalPlayer:FindFirstChild("Backpack")
-            
-            if not humanoid or not backpack then return end
-            
-            local darkMatterSlap = backpack:FindFirstChild("Dark Matter Slap") or character:FindFirstChild("Dark Matter Slap")
-            
-            if darkMatterSlap and darkMatterSlap.Parent == backpack then
-                humanoid:EquipTool(darkMatterSlap)
-            end
-        end)
-    end
-    
-    local function stopKeepingEquipped()
-        if lagServerConnection then
-            lagServerConnection:Disconnect()
-            lagServerConnection = nil
-        end
-        
-        local character = LocalPlayer.Character
-        if character then
-            local humanoid = character:FindFirstChildOfClass("Humanoid")
-            if humanoid then
-                humanoid:UnequipTools()
-            end
-        end
-    end
-    
-    lagButton.MouseButton1Click:Connect(function()
-        lagServerActive = not lagServerActive
-        
-        local character = LocalPlayer.Character
-        local backpack = LocalPlayer:FindFirstChild("Backpack")
-        
-        if not character or not backpack then
-            lagServerActive = false
-            return
-        end
-        
-        local darkMatterSlap = backpack:FindFirstChild("Dark Matter Slap") or character:FindFirstChild("Dark Matter Slap")
-        
-        if not darkMatterSlap then
-            lagServerActive = false
-            toggleButtonState(lagButton, lagStroke, false)
-            return
-        end
-        
-        if lagServerActive then
-            keepDarkMatterEquipped()
-            toggleButtonState(lagButton, lagStroke, true)
-        else
-            stopKeepingEquipped()
-            toggleButtonState(lagButton, lagStroke, false)
-        end
-    end)
-    
-    LocalPlayer.CharacterAdded:Connect(function()
-        lagServerActive = false
-        if lagServerConnection then lagServerConnection:Disconnect(); lagServerConnection = nil end
-        toggleButtonState(lagButton, lagStroke, false)
-    end)
-end
-
-do
-    local BOX_COLOR = Color3.fromRGB(100, 200, 255)
-    local BOX_TRANSPARENCY = 0.7
-    
-    local function createESP(character, player)
-        if character:FindFirstChild("HumanoidRootPart") then
-            local hrp = character.HumanoidRootPart
-            
-            local box = Instance.new("BoxHandleAdornment")
-            box.Size = character:GetExtentsSize()
-            box.Adornee = character
-            box.Color3 = BOX_COLOR
-            box.Transparency = BOX_TRANSPARENCY
-            box.AlwaysOnTop = true
-            box.ZIndex = 5
-            box.Parent = hrp
-            
-            local nameBillboard = Instance.new("BillboardGui")
-            nameBillboard.Adornee = hrp
-            nameBillboard.Size = UDim2.new(0, 100, 0, 20)
-            nameBillboard.StudsOffset = Vector3.new(0, 3, 0)
-            nameBillboard.AlwaysOnTop = true
-            nameBillboard.Parent = hrp
-            
-            local nameLabel = Instance.new("TextLabel")
-            nameLabel.Size = UDim2.new(1, 0, 1, 0)
-            nameLabel.BackgroundTransparency = 0.3
-            nameLabel.BackgroundColor3 = Color3.fromRGB(20, 20, 25)
-            nameLabel.Text = player.Name
-            nameLabel.Font = Enum.Font.GothamBold
-            nameLabel.TextSize = 12
-            nameLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-            nameLabel.TextStrokeTransparency = 0
-            nameLabel.Parent = nameBillboard
-            
-            local nameCorner = Instance.new("UICorner")
-            nameCorner.CornerRadius = UDim.new(0, 6)
-            nameCorner.Parent = nameLabel
-        end
-    end
-    
-    local function onCharacterAdded(character, player)
-        task.wait(1)
-        createESP(character, player)
-    end
-    
-    local function onPlayerAdded(player)
-        if player ~= LocalPlayer then
-            if player.Character then onCharacterAdded(player.Character, player) end
-            player.CharacterAdded:Connect(function(char)
-                onCharacterAdded(char, player)
-            end)
-        end
-    end
-    
-    for _, p in ipairs(Players:GetPlayers()) do onPlayerAdded(p) end
-    Players.PlayerAdded:Connect(onPlayerAdded)
 end
