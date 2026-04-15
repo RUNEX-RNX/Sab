@@ -1461,4 +1461,4 @@ end
 end)
 switchTab("Speed")
 loadConfig()
-print("[Keyra Hub] Loaded!"
+print("[Keyra Hub] Loaded!")
