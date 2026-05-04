@@ -1,0 +1,222 @@
+-- RNXhub | Key System (Escape Tsunami)
+-- Твой стиль + защита ключом
+
+local RNXkey = "rnxhub"
+local RNXscript = "https://pastebin.com/raw/CHnR7jdd" 
+local RNXlink = "https://t.me/RUNEX_X_SCRIPT"
+
+local setclip = setclipboard or toclipboard or (Clipboard and Clipboard.set) or function() end
+
+-- ========== ГУИ В СТИЛЕ RNXHUB ==========
+local sg = Instance.new("ScreenGui")
+sg.Name = "RNXhub_KeySys"
+sg.ResetOnSpawn = false
+
+-- Вставляем в CoreGui (если не получается — в PlayerGui)
+local success, err = pcall(function()
+    local GUIParent = game:GetService("CoreGui")
+    if gethui then GUIParent = gethui() end
+    sg.Parent = GUIParent
+end)
+if not success then
+    sg.Parent = game:Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+-- Главное окно
+local f = Instance.new("Frame")
+f.Size = UDim2.new(0, 320, 0, 210)
+f.Position = UDim2.new(0.5, -160, 0.5, -105)
+f.BackgroundColor3 = Color3.fromRGB(10, 10, 20)
+f.BackgroundTransparency = 0.05
+f.BorderSizePixel = 0
+f.Active = true
+f.Draggable = true
+f.Parent = sg
+
+local cr = Instance.new("UICorner")
+cr.CornerRadius = UDim.new(0, 12)
+cr.Parent = f
+
+local stroke = Instance.new("UIStroke")
+stroke.Color = Color3.fromRGB(0, 200, 255)
+stroke.Thickness = 1.5
+stroke.Transparency = 0.3
+stroke.Parent = f
+
+-- Заголовок
+local titleBar = Instance.new("Frame")
+titleBar.Size = UDim2.new(1, 0, 0, 35)
+titleBar.Position = UDim2.new(0, 0, 0, 0)
+titleBar.BackgroundColor3 = Color3.fromRGB(20, 20, 35)
+titleBar.BackgroundTransparency = 0
+titleBar.BorderSizePixel = 0
+titleBar.Parent = f
+
+local titleBarCorner = Instance.new("UICorner")
+titleBarCorner.CornerRadius = UDim.new(0, 12)
+titleBarCorner.Parent = titleBar
+
+local t = Instance.new("TextLabel")
+t.Size = UDim2.new(1, -60, 1, 0)
+t.Position = UDim2.new(0, 15, 0, 0)
+t.BackgroundTransparency = 1
+t.Text = "RNXhub | Escape Tsunami"
+t.TextColor3 = Color3.fromRGB(255, 255, 255)
+t.TextSize = 13
+t.Font = Enum.Font.GothamBold
+t.TextXAlignment = Enum.TextXAlignment.Left
+t.Parent = titleBar
+
+-- Кнопка закрытия (X)
+local closeBtn = Instance.new("TextButton")
+closeBtn.Size = UDim2.new(0, 28, 0, 25)
+closeBtn.Position = UDim2.new(1, -28, 0, 5)
+closeBtn.Text = "X"
+closeBtn.Font = Enum.Font.GothamBold
+closeBtn.TextSize = 14
+closeBtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+closeBtn.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+closeBtn.AutoButtonColor = false
+closeBtn.Parent = titleBar
+
+local closeCorner = Instance.new("UICorner")
+closeCorner.CornerRadius = UDim.new(0, 6)
+closeCorner.Parent = closeBtn
+
+closeBtn.MouseEnter:Connect(function()
+    closeBtn.BackgroundColor3 = Color3.fromRGB(255, 80, 80)
+end)
+closeBtn.MouseLeave:Connect(function()
+    closeBtn.BackgroundColor3 = Color3.fromRGB(200, 50, 50)
+end)
+
+closeBtn.MouseButton1Click:Connect(function()
+    sg:Destroy()
+end)
+
+-- Подзаголовок
+local st = Instance.new("TextLabel")
+st.Size = UDim2.new(1, -20, 0, 20)
+st.Position = UDim2.new(0, 10, 0, 48)
+st.BackgroundTransparency = 1
+st.Text = "Введите ключ для разблокировки"
+st.TextColor3 = Color3.fromRGB(150, 150, 165)
+st.TextSize = 12
+st.Font = Enum.Font.Gotham
+st.Parent = f
+
+-- Поле ввода ключа
+local box = Instance.new("TextBox")
+box.Size = UDim2.new(0.92, 0, 0, 38)
+box.Position = UDim2.new(0.04, 0, 0, 78)
+box.BackgroundColor3 = Color3.fromRGB(30, 30, 40)
+box.TextColor3 = Color3.fromRGB(240, 240, 245)
+box.PlaceholderText = "ключ..."
+box.Text = ""
+box.Font = Enum.Font.Gotham
+box.TextSize = 14
+box.ClearTextOnFocus = false
+box.Parent = f
+
+local bc = Instance.new("UICorner")
+bc.CornerRadius = UDim.new(0, 8)
+bc.Parent = box
+
+-- Кнопка Submit
+local sub = Instance.new("TextButton")
+sub.Size = UDim2.new(0.44, 0, 0, 38)
+sub.Position = UDim2.new(0.04, 0, 0, 128)
+sub.BackgroundColor3 = Color3.fromRGB(0, 100, 200)
+sub.Text = "Submit"
+sub.TextColor3 = Color3.fromRGB(255, 255, 255)
+sub.Font = Enum.Font.GothamSemibold
+sub.TextSize = 14
+sub.AutoButtonColor = false
+sub.Parent = f
+
+local sc = Instance.new("UICorner")
+sc.CornerRadius = UDim.new(0, 8)
+sc.Parent = sub
+
+sub.MouseEnter:Connect(function()
+    sub.BackgroundColor3 = Color3.fromRGB(0, 130, 230)
+end)
+sub.MouseLeave:Connect(function()
+    sub.BackgroundColor3 = Color3.fromRGB(0, 100, 200)
+end)
+
+-- Кнопка Get Key
+local get = Instance.new("TextButton")
+get.Size = UDim2.new(0.44, 0, 0, 38)
+get.Position = UDim2.new(0.52, 0, 0, 128)
+get.BackgroundColor3 = Color3.fromRGB(65, 65, 80)
+get.Text = "Get Key"
+get.TextColor3 = Color3.fromRGB(255, 255, 255)
+get.Font = Enum.Font.GothamSemibold
+get.TextSize = 14
+get.AutoButtonColor = false
+get.Parent = f
+
+local gc = Instance.new("UICorner")
+gc.CornerRadius = UDim.new(0, 8)
+gc.Parent = get
+
+get.MouseEnter:Connect(function()
+    get.BackgroundColor3 = Color3.fromRGB(85, 85, 105)
+end)
+get.MouseLeave:Connect(function()
+    get.BackgroundColor3 = Color3.fromRGB(65, 65, 80)
+end)
+
+-- Перетаскивание окна (чтобы не мешало)
+local dragging = false
+local dragStart
+f.InputBegan:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = true
+        dragStart = input.Position
+    end
+end)
+game:GetService("UserInputService").InputChanged:Connect(function(input)
+    if dragging and input.UserInputType == Enum.UserInputType.MouseMovement then
+        local delta = input.Position - dragStart
+        f.Position = f.Position + UDim2.new(0, delta.X, 0, delta.Y)
+        dragStart = input.Position
+    end
+end)
+game:GetService("UserInputService").InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 then
+        dragging = false
+    end
+)
+
+-- ========== ОСТАЛЬНАЯ ЛОГИКА (НЕ ТРОГАЛ) ==========
+local function verify()
+    local inp = box.Text:lower():gsub("%s+", "")
+    if inp == RNXkey then
+        sg:Destroy()
+        loadstring(game:HttpGet(RNXscript, true))()
+    else
+        box.Text = ""
+        box.PlaceholderText = "Wrong key"
+        box.PlaceholderColor3 = Color3.fromRGB(255, 90, 90)
+        task.delay(1.2, function()
+            box.PlaceholderText = "ключ..."
+            box.PlaceholderColor3 = Color3.fromRGB(180, 180, 195)
+        end)
+    end
+end
+
+sub.MouseButton1Click:Connect(verify)
+box.FocusLost:Connect(function(enterPressed)
+    if enterPressed then verify() end
+end)
+
+get.MouseButton1Click:Connect(function()
+    setclip(RNXlink)
+    game:GetService("StarterGui"):SetCore("SendNotification", {
+        Title = "Link copied",
+        Text = "Paste in telegram → search script copy key!",
+        Duration = 5
+    })
+end)
